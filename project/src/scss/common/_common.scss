@@ -1,0 +1,193 @@
+/* -------------------------------- 테이블,그리드,게시판 등의 상단 -------------------------------- */
+.comGroupTop {
+
+    .alignL{
+
+    }
+    .alignR{
+
+    }
+    .unit{
+        .text{
+            .total{
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+/* -------------------------------- 테이블,그리드,게시판 등의 하단 -------------------------------- */
+.comGroupBtm{
+
+    .alignL{
+
+    }
+    .alignR{
+
+    }
+    .btn {
+        &.basic {}
+        &.bGray {}
+        &.oGray {}
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+/* -------------------------------- 사이드 옵션 -------------------------------- */
+.comSideOpt{
+    .sideItem{
+
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+/* -------------------------------- 페이징 -------------------------------- */
+.comPaging{
+    .start{
+
+    }
+    .prev{
+
+    }
+    .next{
+
+    }
+    .end{
+
+    }
+    .numList{
+        > li{
+            &.on{}
+            a{}
+        }
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+/* -------------------------------- 파일 업로드/다운로드 -------------------------------- */
+.comFileList{
+    .fileGroup{
+        .file{
+            &.upload{
+
+            }
+            &.download{
+
+            }
+            dl{
+                dt{
+
+                }
+                dd{
+                    a{}
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+/* -------------------------------- 이전글/다음글 -------------------------------- */
+.comOtherPage{
+    .otherGroup{
+        .otherItem{
+            .otherTitle{
+                
+            }
+            .otherCont{
+                .link{
+                    
+                }
+            }
+            .otherDate{
+                
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+//기본 폼
+input[type=text] {}
+input[type=password] {}
+
+//폼그룹
+.frmSearch{
+    .frmTini {}
+    .frmXs {}
+    .frmSm {}
+    .frmMd {}
+    .frmLg {}
+    .frmXl {}
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+.iptText {
+    
+}
+.iptSlt  {
+    
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}
+
+.frmChoBox {
+    .iptChk  {
+        
+        & + .iptLbl{
+
+        }
+        &:checked + .iptLbl{
+
+        }
+        &:disabled + .iptLbl{
+
+        }
+        &:disabled:checked + .iptLbl{
+
+        }
+    }
+    .iptRdo  {
+        
+        & + .iptLbl{
+            
+        }
+        &:checked + .iptLbl{
+
+        }
+        &:disabled + .iptLbl{
+
+        }
+        &:disabled:checked + .iptLbl{
+
+        }
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1023px) {
+
+}

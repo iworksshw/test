@@ -1,0 +1,34 @@
+
+//반응형
+@mixin media($breakpoint, $breakpoints:$breakpointText){
+    @if map-has-key($breakpoints, $breakpoint){
+        $breakpoint:map-get($breakpoints, $breakpoint);
+    }
+
+    @media screen and (max-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+$breakpointText: (
+    mobile:767px,
+    tablet:1023px,
+    pc:1340px,
+    gnb:1420px,
+);
+
+//한줄 말줄임
+@mixin line1() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//여러줄 말줄임
+
+//rem공식
+//$basicFontSize:16px; default.scss 최상단에 있음
+$basicFontSize:16px;
+@function rem($pixels, $base: $basicFontSize) {
+    @return calc($pixels / $base)+rem;
+}

@@ -1,0 +1,189 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Input Text</div>
+<div class="guideCont">
+<div class="gText">
+    - input text, password 폼입니다.
+    <br>- 기본 폼이며 검색, 그리드, 테이블에 동일한 폼을 사용합니다
+    <br>- 가능한 class "frmGroup" 내부에서 사용합니다.
+    <br>- input의 text와 password는 class "iptText"를 사용합니다.
+    <br>- addClass로 크기를 조절 할 수 있으며 이를 이용해서 input,select 등을 조합 할 수도 있습니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+input[type=text]{ width: 100%; height: 34px; padding-left: 12px; font-size: 14px; border: 1px solid #bbbbbb; border-radius: 4px; background: #fff;}
+       
+/* 폼 그룹 */
+.frmGroup {margin-top:5px; display:flex; align-items:center;}
+.frmGroup:first-child {margin-top:0;}
+html .frmTini {width:60px; min-width:60px;}
+html .frmXs {width:100px; min-width:100px;}
+html .frmSm {width:130px; min-width:130px;}
+html .frmMd {width:170px; min-width:170px;}
+html .frmLg {width:200px; min-width:200px;}
+html .frmHalf {width:calc(50% - 3px); min-width:calc(50% - 3px);}
+html .frmThrd {width:calc(33% - 3px); min-width:calc(33% - 3px);}
+html .frmFrth {width:calc(25% - 3px); min-width:calc(25% - 3px);}
+textArea.areaMd {height:150px;}
+.frmGroup .iptText {margin-left:5px;}
+.frmGroup .iptText:first-child {margin-left:0;}
+.frmGroup .iptSlt {margin-left:5px;}
+.frmGroup .iptSlt:first-child {margin-left:0;}
+.frmGroup .textBox {margin-left:5px;}
+.frmGroup .textBox:first-child {margin-left:0;}
+.frmGroup .textBox.clar {margin-top:0; margin-left:5px;}
+.frmGroup.multiLine {flex-wrap: wrap;} /* 여러줄이 필요할 경우 */
+
+
+</style>
+<!-- 그리드/테이블 하단 버튼 양측 -->  
+<div class="frmGroup">
+    <input type="text" class="iptText frmTini" placeholder="가장 작은" />
+    <input type="text" class="iptText frmXs" placeholder="많이 작은" />
+    <input type="text" class="iptText frmSm" placeholder="작은" />
+    <input type="text" class="iptText frmMd" placeholder="보통" />
+    <input type="text" class="iptText frmLg" placeholder="큰" />
+</div>
+<div class="frmGroup">
+    <input type="text" class="iptText frmHalf" placeholder="1/2" />
+</div>
+<div class="frmGroup">
+    <input type="text" class="iptText frmThrd" placeholder="1/3" />
+    <input type="text" class="iptText frmFrth" placeholder="1/4" />
+</div>
+<div class="frmGroup">
+    <input type="text" class="iptText" placeholder="100%" />
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Input Text (datepicker)</div>
+<div class="guideCont">
+<div class="gText">
+    Datepicker은 기본적으로는 Toast UI를 사용하고 있습니다. 샘플 및 사용법은 다음과 같습니다.
+
+    기본적인 js는 common.js에 있습니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="frmGroup">
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+        <input type="text" id="datepicker-input" aria-label="Date-Time">
+        <div id="datepicker-container" style="margin-top: -1px;"></div>
+    </div>
+</div>
+<div class="frmGroup">
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frmSm">
+        <input type="text" id="datepicker-input01" aria-label="Date-Time">
+        <div id="datepicker-container01" style="margin-top: -1px;"></div>
+    </div>
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frmMd">
+        <input type="text" id="datepicker-input02" aria-label="Date-Time">
+        <div id="datepicker-container02" style="margin-top: -1px;"></div>
+    </div>
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frmLg">
+        <input type="text" id="datepicker-input03" aria-label="Date-Time">
+        <div id="datepicker-container03" style="margin-top: -1px;"></div>
+    </div>
+</div>
+
+<div class="frmGroup">
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+        <input id="startpicker-input" type="text" aria-label="Date">
+        <div id="startpicker-container" style="margin-left: -1px;"></div>
+    </div>
+    <div class="textBox deco">~</div>
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+        <input id="endpicker-input" type="text" aria-label="Date">
+        <div id="endpicker-container" style="margin-left: -1px;"></div>
+    </div>
+</div>
+
+<div class="frmGroup">
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frmLg">
+        <input id="startpicker-input02" type="text" aria-label="Date">
+        <div id="startpicker-container02" style="margin-left: -1px;"></div>
+    </div>
+    <div class="textBox deco">~</div>
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frmLg">
+        <input id="endpicker-input02" type="text" aria-label="Date">
+        <div id="endpicker-container02" style="margin-left: -1px;"></div>
+    </div>
+</div>
+
+<script>
+//단일
+datePicker("datepicker-input","datepicker-container");
+datePicker("datepicker-input01","datepicker-container01");
+datePicker("datepicker-input02","datepicker-container02");
+datePicker("datepicker-input03","datepicker-container03");
+
+//기간
+datePickerTo("startpicker-input", "startpicker-container", "endpicker-input", "endpicker-container");
+datePickerTo("startpicker-input02", "startpicker-container02", "endpicker-input02", "endpicker-container02");
+</script>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<script>
+//단일
+setTimeout(function(){
+    datePicker("datepicker-input","datepicker-container");
+    datePicker("datepicker-input01","datepicker-container01");
+    datePicker("datepicker-input02","datepicker-container02");
+    datePicker("datepicker-input03","datepicker-container03");
+
+    //기간
+    datePickerTo("startpicker-input", "startpicker-container", "endpicker-input", "endpicker-container");
+    datePickerTo("startpicker-input02", "startpicker-container02", "endpicker-input02", "endpicker-container02");
+},500);
+</script>
+<!-- //가이드 그룹 -->
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        

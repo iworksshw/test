@@ -1,0 +1,165 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+    
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">checkbox, radio</div>
+<div class="guideCont">
+<div class="gText">
+    checkbox는 "iptChk", radio는 "iptRdo"를 사용합니다.
+    <br>체크박스나 라디오의 너비가 같은경우는 ul "frmChoList", li "frmChoBox"조합을 사용합니다.
+    <br>이것 역시 다른 input,select와 조합이 가능합니다.
+    <br>class "frmChoBox" 내부에 input을 넣을 수 있지만 이경우 frmTini~frmLg까지만 가능합니다.
+    <br>수가 많아 여러줄이 될 가능성이 있는 경우 "frmGroup" class에 "multiLine"을 추가합니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+/* ------------------------------------------------ 라디오/체크박스 ------------------------------------------------ */
+/* 일반 체크박스/라디오 박스 */
+.frmChoBox {margin-right:30px; display:inline-block; position:relative;}
+.frmChoBox .iptLbl {min-height:30px; margin-right:10px; padding-top:5px; padding-bottom:5px; word-break:keep-all;}
+.frmChoBox .iptLbl:last-child {margin-right:0;}
+.frmChoBox .iptChk + .iptLbl {padding-left:24px; font-size:14px; line-height:20px; color:#000; background:url(../images/common/ic_chk_off.svg) left center no-repeat;}
+.frmChoBox .iptChk:checked + .iptLbl {background:url(../images/common/ic_chk_on.svg) left center no-repeat;}
+
+.frmChoBox .iptChk:disabled + .iptLbl {color:#666; background:url(../images/common/ic_chk_dis_off.svg) left center no-repeat;}
+.frmChoBox .iptChk:disabled:checked + .iptLbl {background:url(../images/common/ic_chk_dis_on.svg) left center no-repeat;}
+
+.frmChoBox .iptRdo + .iptLbl {padding-left:24px; font-size:14px; line-height:20px; color:#000; background:url(../images/common/ic_rdo_off.svg) left center no-repeat;}
+.frmChoBox .iptRdo:checked + .iptLbl {background:url(../images/common/ic_rdo_on.svg) left center no-repeat;}
+
+.frmChoBox .iptRdo:disabled + .iptLbl {color:#666; background:url(../images/common/ic_rdo_dis_off.svg) left center no-repeat;}
+.frmChoBox .iptRdo:disabled:checked + .iptLbl {background:url(../images/common/ic_rdo_dis_on.svg) left center no-repeat;}
+
+.frmChoBox:last-child {margin-right:0;}
+/* 체크박스/라디오 리스트 */
+.frmChoList {width:100%; display:flex; flex-wrap:wrap;}
+.frmChoList .frmChoBox {width:200px; margin-right:0;}
+.frmChoList.w100 .frmChoBox {width:100px;}
+.frmChoList.w150 .frmChoBox {width:150px;}
+.frmChoList.w200 .frmChoBox {width:200px;}
+.frmChoList.w250 .frmChoBox {width:250px;}
+.frmChoList.w300 .frmChoBox {width:300px;}
+.frmChoList.col6 .frmChoBox {width:50%;}
+.frmChoList.col4 .frmChoBox {width:33.333%;}
+.frmChoList.col3 .frmChoBox {width:25%;}
+.frmChoList.col2 .frmChoBox {width:16.666%;}
+.frmChoList.vertical {padding-top:5px;}
+.frmChoList.vertical .frmChoBox {width:100%;}
+/* 텍스트 없는 체크박스/라디오 */
+.frmChoBox.only .iptChk + .iptLbl {height:30px; margin:0; padding-left:20px;}
+.frmChoBox.only .iptRdo + .iptLbl {height:30px; margin:0; padding-left:20px;}
+
+
+/* 폼 그룹 */
+.frmGroup {margin-top:5px; display:flex; align-items:center;}
+.frmGroup:first-child {margin-top:0;}
+html .frmTini {width:60px; min-width:60px;}
+html .frmXs {width:100px; min-width:100px;}
+html .frmSm {width:130px; min-width:130px;}
+html .frmMd {width:170px; min-width:170px;}
+html .frmLg {width:200px; min-width:200px;}
+html .frmHalf {width:calc(50% - 3px); min-width:calc(50% - 3px);}
+html .frmThrd {width:calc(33% - 3px); min-width:calc(33% - 3px);}
+html .frmFrth {width:calc(25% - 3px); min-width:calc(25% - 3px);}
+textArea.areaMd {height:150px;}
+.frmGroup .iptText {margin-left:5px;}
+.frmGroup .iptText:first-child {margin-left:0;}
+.frmGroup .iptSlt {margin-left:5px;}
+.frmGroup .iptSlt:first-child {margin-left:0;}
+.frmGroup .textBox {margin-left:5px;}
+.frmGroup .textBox:first-child {margin-left:0;}
+.frmGroup .textBox.clar {margin-top:0; margin-left:5px;}
+.frmGroup.multiLine {flex-wrap: wrap;} /* 여러줄이 필요할 경우 */
+</style>
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="chk001" type="checkbox" class="iptChk" disabled><label for="chk001" class="iptLbl">체크박스마다</label></div>
+    <div class="frmChoBox"><input id="chk002" type="checkbox" class="iptChk" disabled><label for="chk002" class="iptLbl">떨어진</label></div>
+    <div class="frmChoBox"><input id="chk003" type="checkbox" class="iptChk" disabled checked><label for="chk003" class="iptLbl">길이가 같아요</label></div>
+</div>
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="chk101" type="checkbox" class="iptChk"><label for="chk101" class="iptLbl">체크박스마다</label></div>
+    <div class="frmChoBox"><input id="chk102" type="checkbox" class="iptChk"><label for="chk102" class="iptLbl">떨어진</label></div>
+    <div class="frmChoBox"><input id="chk103" type="checkbox" class="iptChk"><label for="chk103" class="iptLbl">길이가 같아요</label></div>
+</div>
+<div class="frmGroup">
+    <ul class="frmChoList">
+        <li class="frmChoBox"><input id="chk201" type="checkbox" class="iptChk"><label for="chk201" class="iptLbl">체크박스의</label></li>
+        <li class="frmChoBox"><input id="chk202" type="checkbox" class="iptChk"><label for="chk202" class="iptLbl">너비가 글자수랑 상관없이</label></li>
+        <li class="frmChoBox"><input id="chk203" type="checkbox" class="iptChk"><label for="chk203" class="iptLbl">모두 같아요</label></li>
+    </ul>
+</div>
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="rdo001" type="radio" class="iptRdo" name="rdo001" disabled><label for="rdo001" class="iptLbl">라디오마다</label></div>
+    <div class="frmChoBox"><input id="rdo002" type="radio" class="iptRdo" name="rdo001" disabled><label for="rdo002" class="iptLbl">떨어진</label></div>
+    <div class="frmChoBox"><input id="rdo003" type="radio" class="iptRdo" name="rdo001" disabled checked><label for="rdo003" class="iptLbl">길이가 같아요</label></div>
+</div>
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="rdo101" type="radio" class="iptRdo" name="rdo101"><label for="rdo101" class="iptLbl">라디오마다</label></div>
+    <div class="frmChoBox"><input id="rdo102" type="radio" class="iptRdo" name="rdo101"><label for="rdo102" class="iptLbl">떨어진</label></div>
+    <div class="frmChoBox"><input id="rdo103" type="radio" class="iptRdo" name="rdo101"><label for="rdo103" class="iptLbl">길이가 같아요</label></div>
+</div>
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="rdo101" type="radio" class="iptRdo" name="rdo101"><label for="rdo101" class="iptLbl">라디오마다</label></div>
+    <div class="frmChoBox"><input id="rdo102" type="radio" class="iptRdo" name="rdo101"><label for="rdo102" class="iptLbl">떨어진</label></div>
+    <div class="frmChoBox"><input id="rdo103" type="radio" class="iptRdo" name="rdo101"><label for="rdo103" class="iptLbl">길이가 같아요</label></div>
+</div>
+<div class="frmGroup">
+    <ul class="frmChoList">
+        <li class="frmChoBox"><input id="rdo201" type="radio" class="iptRdo" name="rdo201"><label for="rdo201" class="iptLbl">라디오의</label></li>
+        <li class="frmChoBox"><input id="rdo202" type="radio" class="iptRdo" name="rdo201"><label for="rdo202" class="iptLbl">너비가 글자수랑 상관없이</label></li>
+        <li class="frmChoBox"><input id="rdo203" type="radio" class="iptRdo" name="rdo201"><label for="rdo203" class="iptLbl">모두 같아요</label></li>
+    </ul>
+</div>
+<div class="frmGroup multiLine">
+    <div class="frmChoBox"><input id="chk301" type="checkbox" class="iptChk"><label for="chk301" class="iptLbl">여러줄은</label></div>
+    <div class="frmChoBox"><input id="chk302" type="checkbox" class="iptChk"><label for="chk302" class="iptLbl">frmGroup class에</label></div>
+    <div class="frmChoBox"><input id="chk303" type="checkbox" class="iptChk"><label for="chk303" class="iptLbl">multiLine class를</label></div>
+    <div class="frmChoBox"><input id="chk304" type="checkbox" class="iptChk"><label for="chk304" class="iptLbl">추가하세요</label></div>
+    <div class="frmChoBox"><input id="chk305" type="checkbox" class="iptChk"><label for="chk305" class="iptLbl">여러줄은</label></div>
+    <div class="frmChoBox"><input id="chk306" type="checkbox" class="iptChk"><label for="chk306" class="iptLbl">frmGroup class에</label></div>
+    <div class="frmChoBox"><input id="chk307" type="checkbox" class="iptChk"><label for="chk307" class="iptLbl">multiLine class를</label></div>
+    <div class="frmChoBox"><input id="chk308" type="checkbox" class="iptChk"><label for="chk308" class="iptLbl">추가하세요</label></div>
+    <div class="frmChoBox"><input id="chk309" type="checkbox" class="iptChk"><label for="chk309" class="iptLbl">여러줄은</label></div>
+    <div class="frmChoBox"><input id="chk310" type="checkbox" class="iptChk"><label for="chk310" class="iptLbl">frmGroup class에</label></div>
+    <div class="frmChoBox"><input id="chk311" type="checkbox" class="iptChk"><label for="chk311" class="iptLbl">multiLine class를</label></div>
+    <div class="frmChoBox"><input id="chk312" type="checkbox" class="iptChk"><label for="chk312" class="iptLbl">추가하세요</label></div>
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        

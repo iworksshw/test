@@ -1,0 +1,279 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Table</div>
+<div class="guideCont">
+<div class="gText">
+    테이블 내부에 무엇이 들어갈 수 있는지를 정의합니다.
+    <br>input, select 버튼 등 각종 Form은 Form가이드에 있는 그대로 들어갑니다.
+    <br>*테이블 th, td에 사용하는 정렬 클래스
+    <br>left : 좌측정렬
+    <br>center : 가운데정렬
+    <br>right : 우측정렬
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+/* ---------------------------- table :: basic ---------------------------- */
+.comTable {width:100%; border-top:1px solid #000; background:#fff;}
+.comTable table {border-spacing: 0; border-collapse: collapse; table-layout: fixed;}
+.comTable .tbView {width:100%;}
+.comTable .tbView thead th {height:42px; font-size:14px; font-weight:500; color:#000; border-left:1px solid rgba(132, 132, 132, 0.2); border-bottom:1px solid rgba(132, 132, 132, 0.2); background:#f5f5f5;}
+.comTable .tbView thead th:first-child {border-left:0;}
+.comTable .tbView tbody th {height:42px; padding:10px 10px; font-size:14px; font-weight:500; color:#000; border-left:1px solid rgba(132, 132, 132, 0.2); line-height:20px; border-bottom:1px solid rgba(132, 132, 132, 0.2); background:#f5f5f5;}
+.comTable .tbView tbody th:first-child {border-left:0;}
+.comTable .tbView td {height:42px; padding:6px 10px; font-size:14px; font-weight:400; color:#000; border-left:1px solid rgba(132, 132, 132, 0.2); border-bottom:1px solid rgba(132, 132, 132, 0.2);}
+.comTable .tbView td:first-child {border-left:0;}
+.comTable .tbView td.noList {border-bottom:0; height:60px;}
+.comTable .required {margin-left:2px; color:var(--basic-color);}
+.comTable .clar {margin-top:2px; font-size:12px; line-height:17px; color:#757575;}
+
+/* 추가조작 */
+.comTable table tr .left {text-align:left;}
+.comTable table tr .center {text-align:center;}
+.comTable table tr .center .frmGroup {justify-content: center;}
+.comTable table tr .right {text-align:right;}
+.comTable table tr .top {vertical-align:top;}
+.comTable table tr .middle {vertical-align:middle;}
+.comTable table tr .bottom {vertical-align:bottom;}
+.comTable table tr .bold {font-weight:bold;}
+.comTable table tr .bdl {border-left:1px solid rgba(132, 132, 132, 0.2) !important; }
+
+/* 테이블 Form */
+.comTable input.iptText {height:30px;}
+.comTable select.iptSlt {height:30px;}
+.comTable .textBox {height:30px; line-height:29px;}
+.comTable .iptDate {height:30px;}
+.comTable .iptDate .dateBtn {width:30px; height:30px;}
+
+/* 테이블 버튼 */
+.comTable .btn {padding:0 10px; height: 30px; margin-left:5px; font-size: 14px; font-weight: 400; white-space: nowrap; line-height:28px; border-radius: 4px; display:inline-block;}
+.comTable .btn:first-child {margin-left:0;}
+.comTable .btn.red {color: #fff; background: #b01f1f; border:1px solid #b01f1f;}
+.comTable .btn.blue {color: #fff; background: #5a7eff; border:1px solid #5a7eff;}
+.comTable .btn.dkBlue {color: #fff; background: #2a2d3e; border:1px solid #2a2d3e;}
+.comTable .btn.purple {color: #fff; background: #263688; border:1px solid #263688;}
+.comTable .btn.gLine {color:#757575; background:#fff; border:1px solid #9fa0a0;}
+.comTable .btn.blLine {color:#2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.comTable .btn.dkbLine {color: #2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.comTable .btn.bLine {color: #5a7eff; background:#fff; border:1px solid #5a7eff;}
+
+input[type=text]{ width: 100%; height: 34px; padding-left: 12px; font-size: 14px; border: 1px solid #bbbbbb; border-radius: 4px; background: #fff;}
+select {width: 100%; height: 34px; padding-left: 12px; font-size: 14px; border: 1px solid #bbbbbb; border-radius: 4px; background: #fff url(../images/common/ic_slt.svg) calc(100% - 10px) center no-repeat;}
+
+
+/* ------------------------------------------------ 라디오/체크박스 ------------------------------------------------ */
+/* 일반 체크박스/라디오 박스 */
+.frmChoBox {margin-right:30px; display:inline-block; position:relative;}
+.frmChoBox .iptLbl {min-height:30px; margin-right:10px; padding-top:5px; padding-bottom:5px; word-break:keep-all;}
+.frmChoBox .iptLbl:last-child {margin-right:0;}
+.frmChoBox .iptChk + .iptLbl {padding-left:24px; font-size:14px; line-height:20px; color:#000; background:url(../images/common/ic_chk_off.svg) left center no-repeat;}
+.frmChoBox .iptChk:checked + .iptLbl {background:url(../images/common/ic_chk_on.svg) left center no-repeat;}
+
+.frmChoBox .iptChk:disabled + .iptLbl {color:#666; background:url(../images/common/ic_chk_dis_off.svg) left center no-repeat;}
+.frmChoBox .iptChk:disabled:checked + .iptLbl {background:url(../images/common/ic_chk_dis_on.svg) left center no-repeat;}
+
+.frmChoBox .iptRdo + .iptLbl {padding-left:24px; font-size:14px; line-height:20px; color:#000; background:url(../images/common/ic_rdo_off.svg) left center no-repeat;}
+.frmChoBox .iptRdo:checked + .iptLbl {background:url(../images/common/ic_rdo_on.svg) left center no-repeat;}
+
+.frmChoBox .iptRdo:disabled + .iptLbl {color:#666; background:url(../images/common/ic_rdo_dis_off.svg) left center no-repeat;}
+.frmChoBox .iptRdo:disabled:checked + .iptLbl {background:url(../images/common/ic_rdo_dis_on.svg) left center no-repeat;}
+
+.frmChoBox:last-child {margin-right:0;}
+/* 체크박스/라디오 리스트 */
+.frmChoList {width:100%; display:flex; flex-wrap:wrap;}
+.frmChoList .frmChoBox {width:200px; margin-right:0;}
+.frmChoList.w100 .frmChoBox {width:100px;}
+.frmChoList.w150 .frmChoBox {width:150px;}
+.frmChoList.w200 .frmChoBox {width:200px;}
+.frmChoList.w250 .frmChoBox {width:250px;}
+.frmChoList.w300 .frmChoBox {width:300px;}
+.frmChoList.col6 .frmChoBox {width:50%;}
+.frmChoList.col4 .frmChoBox {width:33.333%;}
+.frmChoList.col3 .frmChoBox {width:25%;}
+.frmChoList.col2 .frmChoBox {width:16.666%;}
+.frmChoList.vertical {padding-top:5px;}
+.frmChoList.vertical .frmChoBox {width:100%;}
+/* 텍스트 없는 체크박스/라디오 */
+.frmChoBox.only .iptChk + .iptLbl {height:30px; margin:0; padding-left:20px;}
+.frmChoBox.only .iptRdo + .iptLbl {height:30px; margin:0; padding-left:20px;}
+
+
+/* 폼 그룹 */
+.frmGroup {margin-top:5px; display:flex; align-items:center;}
+.frmGroup:first-child {margin-top:0;}
+html .frmTini {width:60px; min-width:60px;}
+html .frmXs {width:100px; min-width:100px;}
+html .frmSm {width:130px; min-width:130px;}
+html .frmMd {width:170px; min-width:170px;}
+html .frmLg {width:200px; min-width:200px;}
+html .frmHalf {width:calc(50% - 3px); min-width:calc(50% - 3px);}
+html .frmThrd {width:calc(33% - 3px); min-width:calc(33% - 3px);}
+html .frmFrth {width:calc(25% - 3px); min-width:calc(25% - 3px);}
+textArea.areaMd {height:150px;}
+.textBox {width:max-content; min-width: max-content; height:34px;margin-left:5px;  line-height:37px; display:inline-block;}
+.textBox.deco {width:15px; min-width:15px; margin-left:2px; text-align:center;}
+.textBox.clar {font-size:12px; line-height:17px; margin-top:2px;}
+.frmGroup .iptText {margin-left:5px;}
+.frmGroup .iptText:first-child {margin-left:0;}
+.frmGroup .iptSlt {margin-left:5px;}
+.frmGroup .iptSlt:first-child {margin-left:0;}
+.frmGroup .textBox {margin-left:5px;}
+.frmGroup .textBox:first-child {margin-left:0;}
+.frmGroup .textBox.clar {margin-top:0; margin-left:5px;}
+.frmGroup.multiLine {flex-wrap: wrap;} /* 여러줄이 필요할 경우 */
+
+
+
+
+</style>
+
+<div class="comTable">
+    <table class="tbView">
+        <colgroup>
+            <col style="width:110px;">
+            <col style="width:auto;">
+            <col style="width:120px;">
+            <col style="width:auto;">
+        </colgroup>
+        <caption></caption>
+        <thead>
+            <tr>
+                <th class="center">Name</th>
+                <th class="center">Name</th>
+                <th class="center">Name</th>
+                <th class="center">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="left">이름</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <input type="text" class="iptText">
+                    </div>
+                </td>
+                <th class="left">게시판유형</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <div class="frmChoBox"><input id="rdo001" type="radio" class="iptRdo" name="rdo001"><label for="rdo001" class="iptLbl">전체</label></div>
+                        <div class="frmChoBox"><input id="rdo002" type="radio" class="iptRdo" name="rdo001"><label for="rdo002" class="iptLbl">일반형</label></div>
+                        <div class="frmChoBox"><input id="rdo003" type="radio" class="iptRdo" name="rdo001"><label for="rdo003" class="iptLbl">리스트형</label></div>
+                        <div class="frmChoBox"><input id="rdo004" type="radio" class="iptRdo" name="rdo001"><label for="rdo004" class="iptLbl">갤러리형</label></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="left">조합</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <select name="" id="" class="iptSlt frmSm">
+                            <option value="">10개씩 보기</option>
+                            <option value="">20개씩 보기</option>
+                            <option value="">30개씩 보기</option>
+                        </select>
+                        <input type="text" class="iptText">
+                    </div>
+                </td>
+                <th class="left">댓글<br></th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <div class="frmChoBox"><input id="chk001" type="checkbox" class="iptChk"><label for="chk001" class="iptLbl">실명</label></div>
+                        <div class="frmChoBox"><input id="chk002" type="checkbox" class="iptChk"><label for="chk002" class="iptLbl">비공개</label></div>
+                        <div class="frmChoBox"><input id="chk003" type="checkbox" class="iptChk"><label for="chk003" class="iptLbl">익명</label></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="left">연락처</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <select name="" id="" class="iptSlt frmXs">
+                            <option value="">010</option>
+                            <option value=""></option>
+                        </select>
+                        <div class="textBox deco">-</div>
+                        <input type="text" class="iptText frmXs" placeholder="많이 작은">
+                        <div class="textBox deco">-</div>
+                        <input type="text" class="iptText frmXs" placeholder="많이 작은">
+                    </div>
+                </td>
+                <th class="left">이메일</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <input type="text" class="iptText frmXs">
+                        <div class="textBox deco">@</div>
+                        <input type="text" class="iptText">
+                        <select name="" id="" class="iptSlt frmXs">
+                            <option value="">직접선택</option>
+                            <option value="">gmail.com</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="left">주소</th>
+                <td class="left">
+                    <div class="frmGroup">
+                        <input type="text" class="iptText">
+                        <input type="text" class="iptText">
+                        <button type="button" class="btn blLine">주소검색</button>
+                    </div>
+                </td>
+                <th class="left">수신동의</th>
+                <td class="left">
+                    동의
+                </td>
+            </tr>
+            <tr>
+                <th class="left">가입일자</th>
+                <td class="left">
+                    0000-00-00
+                </td>
+                <th class="left">최종 로그인 일시</th>
+                <td class="left">
+                    0000-00-00 00:00:00
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        

@@ -1,0 +1,152 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">팝업</div>
+<div class="guideCont">
+<div class="gText">
+        - 팝업은 .sm, .md, .lg, .tini 크기별로 있으며, 해당 클래스를 추가 하여 종류를 더 다양하게 할 수 있습니다.
+    <br> - 하단 css에서 주석을 풀면 scale motion이 동작합니다.
+    <br> - script는 common.js에 있습니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+
+<style>
+
+/* --------------------------------------------- popup --------------------------------------------- */
+.modPopup {width:100%; height:100%; display:none; justify-content:center; align-items:center; position:fixed; left:50%; top:50%; z-index:1000; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); -moz-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%);}
+.modPopup.on {display:flex; }
+.modPopup *::-webkit-scrollbar {width:4px; background:rgba(132, 132, 132, 0.2);}
+.modPopup *::-webkit-scrollbar-thumb {background:#9fa0a0;}
+
+@media screen and (min-width:100px) and (max-width:1600px) {
+    .modPopup {width:1600px; overflow:auto;}
+}
+
+.modPopup .popupDim {width:100%; height:100%; font-size:0; background:rgba(0,0,0,0.8); position:fixed; left:0; top:0;}
+.modPopup.on .popupDim {opacity:0; animation: popOpenDimd 0.2s linear forwards;}
+@keyframes popOpenDimd { 0% {opacity:0;} 100% {opacity:1;} }
+
+.modPopup .popupArea {width:100%; max-width:1500px; height:auto; max-height: calc(100% - 60px);}
+.modPopup.sm .popupArea {max-width:580px;}
+.modPopup.md .popupArea {max-width:910px;}
+.modPopup.lg .popupArea {max-width:1500px;}
+.modPopup.tini .popupArea {max-width:400px;}
+
+.modPopup .popupInMotion {width:100%; height:100%; background:#fff;}
+/* .modPopup.on .popupInMotion {opacity:1; transform:scale(0.7); animation: popOpenScale 0.3s linear forwards;} */
+/* @keyframes popOpenScale { 0% {opacity:0; transform:scale(0.7);} 100% {opacity:1; transform:scale(1);} } */
+
+.modPopup .btnPopClose {width:40px; height:40px; font-size:0; border:0; background:url(../images/common/btn_pop_close.svg) center no-repeat; position:absolute; right:20px; top:10px; z-index:10;}
+.modPopup .popupContainer {width:100%; height:100%; max-height: calc(100vh - 60px); overflow:hidden;}
+.modPopup .popupContArea {width:100%; height:100%; padding-bottom:30px; position:relative; background:#fff;}
+.modPopup .popTitle {width:100%; min-height:60px; padding:14px 120px 9px 20px; font-size:26px; font-weight:500; color:#000; line-height:37px; border-bottom:1px solid rgba(132,132,132,0.2); position:relative; word-break:keep-all;}
+.modPopup .popTitle.shadow {box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);}
+.modPopup .popCont {width:100%; max-height:calc(100vh - 214px); padding:20px 40px 0; overflow:auto;}
+.modPopup .popBtm {padding:20px 40px 0; display:flex; justify-content:flex-end;}
+.modPopup .popBtm.division {justify-content:space-between;}
+.modPopup .popBtm .align {}
+.modPopup .popBtm .btn {padding:0 10px; height: 30px; margin-left:2px; font-size: 14px; font-weight: 400; white-space: nowrap; border-radius: 4px;}
+.modPopup .popBtm .btn.blue {color: #fff; background: #5a7eff; border:1px solid #5a7eff;}
+.modPopup .popBtm .btn.red {color: #fff; background: #b01f1f; border:1px solid #b01f1f;}
+.modPopup .popBtm .btn.purple {color: #fff; border:1px solid #263688; background: #263688;}
+.modPopup .popBtm .btn.dkBlue {color: #fff; border:1px solid #2a2d3e; background: #2a2d3e;}
+.modPopup .popBtm .btn.gLine {color:#2a2d3e; background:#fff; border:1px solid #9fa0a0;}
+.modPopup .popBtm .btn.blLine {color:#2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.modPopup .popBtm .btn.dkbLine {color: #2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.modPopup .popBtm .btn.disabled {color: rgba(0, 0, 0, 0.3); border:1px solid rgba(132, 132, 132, 0.2); background:#f7f7f7; cursor:default;}
+/*
+.modPopup.sm .popTitle {padding:18px 120px 13px 20px; font-size:20px; font-weight:500; color:#000; line-height:29px;}
+.modPopup.sm .popupContArea {padding-bottom:20px;}
+.modPopup.sm .popupArea .popCont {padding:20px 20px 0 20px;}
+.modPopup.sm .popBtm {padding:20px 20px 0 20px;}
+*/
+
+</style>
+
+<div id="sample01" class="modPopup md on"> <!-- class - on : 팝업오픈 -->
+    <div class="popupDim">딤영역</div>
+    <div class="popupArea"> <!-- style - 너비값(width), 높이값(height) : 팝업 너비 및 높이 지정 -->
+        <div class="popupInMotion">
+            <div class="popupContainer">
+                <div class="popupContArea">
+                    <button class="btnPopClose" onclick="closePopup('sample01');">닫기</button>
+                    <div class="popTitle">변경이력</div>
+                    <div class="popCont">
+                        <!-- 팝업 컨텐츠 영역 -->
+                        팝업콘텐츠 영역<br>
+                        팝업콘텐츠 영역<br>
+                        팝업콘텐츠 영역<br>
+                        팝업콘텐츠 영역<br>
+                        팝업콘텐츠 영역<br>
+                        팝업콘텐츠 영역<br>
+                        팝업콘텐츠 영역
+                        <!-- //팝업 컨텐츠 영역 -->
+                    </div>
+
+                     <!-- 팝업 하단 영역 -->
+                    <div class="popBtm">
+                        <button class="btn gLine">취소</button>
+                        <button class="btn dkBlue">계정신청</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+setTimeout(function(){
+    tabMenuInit(); //모드 탭 함수
+},500)
+</script>
+<!-- //가이드 그룹 -->
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

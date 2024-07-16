@@ -1,0 +1,47 @@
+<!-- Header -->
+<%- include('../_ejs/top.ejs', {
+    title: "경륜 커뮤니티",
+    url: "../../"
+}) %>
+
+
+<div class="lytLogin">
+    <div class="cptLogin">
+        <div class="lgInner">
+            <div class="logoBox">
+                <h1 class="kspologo"><img src="../../images/common/logo_login.png" alt="Kcycle 로그인"></h1>
+            </div>
+            <div class="titleBox">
+                <h2 class="loginTitle">비밀번호 찾기</h2>
+            </div>
+            <div class="fnBox">
+                <div class="textMsg">
+                    <p class="text">아이디를 입력해주세요.</p>
+                </div>
+                <dl>
+                    <dt class="title">
+                        <span class="required">*</span>아이디
+                    </dt>
+                    <dd class="iptBox">
+                        <input type="text" placeholder="아이디를 입력해주세요">
+                    </dd>
+                </dl>
+
+                <div class="loginBox">
+                    <button class="btn basic">확인</button>
+                </div>
+                <div class="loginSerch">
+                    <a href="#none">로그인 페이지 이동</a>
+                </div>
+                <div class="footInfo">
+                    시스템 문의 : 정보지원팀<br>
+                    연락처 : 02-2067-5536
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bottom -->
+<%- include('../_ejs/bottom.ejs', { }) %>

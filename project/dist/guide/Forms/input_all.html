@@ -1,0 +1,179 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+    
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Select</div>
+<div class="guideCont">
+<div class="gText">
+    - input text, password 폼입니다.
+    <br>- 기본 폼이며 검색, 그리드, 테이블에 동일한 폼을 사용합니다
+    <br>- 가능한 class "frmGroup" 내부에서 사용합니다.
+    <br>- input의 text와 password는 class "iptText"를 사용합니다.
+    <br>- addClass로 크기를 조절 할 수 있으며 이를 이용해서 input,select 등을 조합 할 수도 있습니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+input[type=text]{ width: 100%; height: 34px; padding-left: 12px; font-size: 14px; border: 1px solid #bbbbbb; border-radius: 4px; background: #fff;}
+select {width: 100%; height: 34px; padding-left: 12px; font-size: 14px; border: 1px solid #bbbbbb; border-radius: 4px; background: #fff url(../images/common/ic_slt.svg) calc(100% - 10px) center no-repeat;}
+  
+/* ------------------------------------------------ 라디오/체크박스 ------------------------------------------------ */
+/* 일반 체크박스/라디오 박스 */
+.frmChoBox {margin-right:30px; display:inline-block; position:relative;}
+.frmChoBox .iptLbl {min-height:30px; margin-right:10px; padding-top:5px; padding-bottom:5px; word-break:keep-all;}
+.frmChoBox .iptLbl:last-child {margin-right:0;}
+.frmChoBox .iptChk + .iptLbl {padding-left:24px; font-size:14px; line-height:20px; color:#000; background:url(../images/common/ic_chk_off.svg) left center no-repeat;}
+.frmChoBox .iptChk:checked + .iptLbl {background:url(../images/common/ic_chk_on.svg) left center no-repeat;}
+
+.frmChoBox .iptChk:disabled + .iptLbl {color:#666; background:url(../images/common/ic_chk_dis_off.svg) left center no-repeat;}
+.frmChoBox .iptChk:disabled:checked + .iptLbl {background:url(../images/common/ic_chk_dis_on.svg) left center no-repeat;}
+
+.frmChoBox .iptRdo + .iptLbl {padding-left:24px; font-size:14px; line-height:20px; color:#000; background:url(../images/common/ic_rdo_off.svg) left center no-repeat;}
+.frmChoBox .iptRdo:checked + .iptLbl {background:url(../images/common/ic_rdo_on.svg) left center no-repeat;}
+
+.frmChoBox .iptRdo:disabled + .iptLbl {color:#666; background:url(../images/common/ic_rdo_dis_off.svg) left center no-repeat;}
+.frmChoBox .iptRdo:disabled:checked + .iptLbl {background:url(../images/common/ic_rdo_dis_on.svg) left center no-repeat;}
+
+.frmChoBox:last-child {margin-right:0;}
+/* 체크박스/라디오 리스트 */
+.frmChoList {width:100%; display:flex; flex-wrap:wrap;}
+.frmChoList .frmChoBox {width:200px; margin-right:0;}
+.frmChoList.w100 .frmChoBox {width:100px;}
+.frmChoList.w150 .frmChoBox {width:150px;}
+.frmChoList.w200 .frmChoBox {width:200px;}
+.frmChoList.w250 .frmChoBox {width:250px;}
+.frmChoList.w300 .frmChoBox {width:300px;}
+.frmChoList.col6 .frmChoBox {width:50%;}
+.frmChoList.col4 .frmChoBox {width:33.333%;}
+.frmChoList.col3 .frmChoBox {width:25%;}
+.frmChoList.col2 .frmChoBox {width:16.666%;}
+.frmChoList.vertical {padding-top:5px;}
+.frmChoList.vertical .frmChoBox {width:100%;}
+/* 텍스트 없는 체크박스/라디오 */
+.frmChoBox.only .iptChk + .iptLbl {height:30px; margin:0; padding-left:20px;}
+.frmChoBox.only .iptRdo + .iptLbl {height:30px; margin:0; padding-left:20px;}
+
+
+/* 폼 그룹 */
+.frmGroup {margin-top:5px; display:flex; align-items:center;}
+.frmGroup:first-child {margin-top:0;}
+html .frmTini {width:60px; min-width:60px;}
+html .frmXs {width:100px; min-width:100px;}
+html .frmSm {width:130px; min-width:130px;}
+html .frmMd {width:170px; min-width:170px;}
+html .frmLg {width:200px; min-width:200px;}
+html .frmHalf {width:calc(50% - 3px); min-width:calc(50% - 3px);}
+html .frmThrd {width:calc(33% - 3px); min-width:calc(33% - 3px);}
+html .frmFrth {width:calc(25% - 3px); min-width:calc(25% - 3px);}
+textArea.areaMd {height:150px;}
+.textBox {width:max-content; min-width: max-content; height:34px;margin-left:5px;  line-height:37px; display:inline-block;}
+.textBox.deco {width:15px; min-width:15px; margin-left:2px; text-align:center;}
+.textBox.clar {font-size:12px; line-height:17px; margin-top:2px;}
+.frmGroup .iptText {margin-left:5px;}
+.frmGroup .iptText:first-child {margin-left:0;}
+.frmGroup .iptSlt {margin-left:5px;}
+.frmGroup .iptSlt:first-child {margin-left:0;}
+.frmGroup .textBox {margin-left:5px;}
+.frmGroup .textBox:first-child {margin-left:0;}
+.frmGroup .textBox.clar {margin-top:0; margin-left:5px;}
+.frmGroup.multiLine {flex-wrap: wrap;} /* 여러줄이 필요할 경우 */
+</style>
+
+<div class="frmGroup">
+    <select name="" id="" class="iptSlt frmSm">
+        <option value="">2023</option>
+        <option value=""></option>
+    </select>
+    <div class="textBox">년도</div>
+</div>
+<div class="frmGroup">
+    <select name="" id="" class="iptSlt frmXs">
+        <option value="">010</option>
+        <option value=""></option>
+    </select>
+    <div class="textBox deco">-</div>
+    <input type="text" class="iptText frmXs" placeholder="많이 작은" />
+    <div class="textBox deco">-</div>
+    <input type="text" class="iptText frmXs" placeholder="많이 작은" />
+</div>
+
+<div class="frmGroup">
+    <input type="text" class="iptText frmTini" placeholder="가장 작은" />
+    <select name="" id="" class="iptSlt frmSm">
+        <option value="">2023</option>
+        <option value=""></option>
+    </select>
+    <input type="text" class="iptText frmSm" placeholder="작은" />
+    <input type="text" class="iptText frmMd" placeholder="보통" />
+    <select name="" id="" class="iptSlt frmLg">
+        <option value="">2023</option>
+        <option value=""></option>
+    </select>
+    <input type="text" class="iptText" placeholder="100%" />
+</div>
+<div class="frmGroup">
+    <input type="text" class="iptText" placeholder="100%" />
+    <input type="text" class="iptText" placeholder="100%" />
+</div>
+<div class="frmGroup">
+    <input type="text" class="iptText" placeholder="100%" />
+    <div class="textBox">텍스트를</div>
+    <input type="text" class="iptText" placeholder="100%" />
+    <div class="textBox">넣어도</div>
+    <input type="text" class="iptText" placeholder="100%" />
+    <div class="textBox">됨</div>
+</div>
+
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="rdo301" type="radio" class="iptRdo" name="rdo301"><label for="rdo301" class="iptLbl">좋아합니다</label></div>
+    <div class="frmChoBox"><input id="rdo302" type="radio" class="iptRdo" name="rdo301"><label for="rdo302" class="iptLbl">싫어합니다</label></div>
+    <div class="frmChoBox"><input id="rdo303" type="radio" class="iptRdo" name="rdo301"><label for="rdo303" class="iptLbl">기타의견</label></div>
+    <input type="text" class="iptText" disabled value="'frmChoBox' 외부에서 조합하면 100%짜리도 가능합니다." placeholder="'frmChoBox' 외부에서 조합하면 100%짜리도 가능합니다." />
+    <input type="text" class="iptText" placeholder="'frmChoBox' 외부에서 조합하면 100%짜리도 가능합니다." />
+</div>
+<div class="frmGroup">
+    <div class="frmChoBox"><input id="rdo401" type="radio" class="iptRdo" name="rdo401"><label for="rdo401" class="iptLbl">좋아합니다</label></div>
+    <div class="frmChoBox"><input id="rdo402" type="radio" class="iptRdo" name="rdo401"><label for="rdo402" class="iptLbl">싫어합니다</label></div>
+    <div class="frmChoBox">
+        <input id="rdo403" type="radio" class="iptRdo" name="rdo401"><label for="rdo403" class="iptLbl">기타의견</label>
+        <input type="text" class="iptText frmLg" placeholder="내부조합은 frmLg까지만" />
+    </div>
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        

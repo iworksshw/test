@@ -1,0 +1,103 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Group Top</div>
+<div class="guideCont">
+<div class="gText">
+    - Grid, Table등의 그룹 위에 사용됩니다.
+    <br>- 좌측영역에 텍스트, 타이틀, 설명 등이 들어갑니다
+    <br>- 우측영역에 버튼, select, input 등이 들어갑니다
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+.comGroupTop {width: 100%; margin-top:40px; margin-bottom:13px; display: flex; justify-content: space-between;}
+.comGroupTop .alignL {width: 100%; display: flex; justify-content: flex-start; align-items: center;}
+.comGroupTop .alignR {width: 100%; display: flex; justify-content: flex-end; align-items: center;}
+.comGroupTop .title {font-size:18px; font-weight:500; color:#000; line-height:26px; margin-right:5px;}
+.comGroupTop .unit {margin-left:5px; display:inline-block;}
+.comGroupTop .unit:first-child {margin-left:0;}
+.comGroupTop .text {font-size:14px; line-height:1; vertical-align:bottom; color:#333;}
+.comGroupTop .total {font-size:14px; font-size:400; color:#5a7eff;}
+
+.comGroupTop .opList {display: flex; align-items: center;}
+.comGroupTop .opList > .item {margin-left: 5px;;}
+.comGroupTop .opList > .item:first-child {margin-left: 0;}
+
+/* 버튼 그룹 */
+.comGroupTop .btn {padding: 0 10px; height: 30px; margin-left: 2px; font-size: 14px; font-weight: 400; white-space: nowrap; border-radius: 4px;}
+.comGroupTop .btn:first-child {margin-left:0;}
+.comGroupTop .btn.red {color: #fff; background: #b01f1f; border:1px solid #b01f1f;}
+.comGroupTop .btn.blue {color: #fff; background: #5a7eff; border:1px solid #5a7eff;}
+.comGroupTop .btn.dkBlue {color: #fff; background: #2a2d3e; border:1px solid #2a2d3e;}
+.comGroupTop .btn.purple {color: #fff; background: #263688; border:1px solid #263688;}
+.comGroupTop .btn.gLine {color:#757575; background:#fff; border:1px solid #9fa0a0;}
+.comGroupTop .btn.blLine {color:#2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.comGroupTop .btn.dkbLine {color: #2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.comGroupTop .btn.bLine {color: #5a7eff; background:#fff; border:1px solid #5a7eff;}
+
+/* 폼 */
+.comGroupTop input[type=text] {width:100px; height:30px; padding-left:8px; font-size:14px; border:1px solid #bbbbbb; border-radius:4px; background:#fff;}
+.comGroupTop input[type=password] {width:100px; height:30px; padding-left:8px; font-size:14px; border:1px solid #bbbbbb; border-radius:4px;}
+</style>
+<!-- 그리드/테이블 하단 버튼 양측 -->  
+<div class="comGroupTop">
+    <div class="alignL">
+        <div class="title">Title Area</div>
+        <div class="unit"><span class="text">조회결과 (총 <span class="total">100</span>건)</span></div>
+    </div>
+    <div class="alignR">
+        <ul class="opList">
+            <li class="item">
+                <div class="text">다른 내용</div>
+            </li>
+            <li class="item">
+                <button type="button" class="btn dkBlue">등록,목록</button>
+                <button type="button" class="btn purple">추가</button>
+                <button type="button" class="btn red">취소,삭제</button>
+                <button type="button" class="btn gLine">기타1</button>
+                <button type="button" class="btn bLine">기타2</button>
+            </li>
+        </ul>
+    </div>
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        

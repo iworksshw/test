@@ -1,0 +1,155 @@
+
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">CRUD 사용 위치 (그리드, 테이블 아래)</div>
+<div class="guideCont">
+<div class="gText">
+    - 기본은 페이지 최하단에 사용
+    <br>- 좌측, 우측, 좌우측에 사용 가능
+    <br>- 버튼의 Class는 "btn"를 사용합니다.
+    <br>- addClass로 색깔 및 모양을 사용합니다. (blue, purple, bLine, gLine, 등)
+    <br>- 정렬기능 있는 태그를 빼지 않습니다. (alignL, alignC, alignR)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+.comBtnGroup {width: 100%; display: flex; justify-content: space-between;}
+.comBtnGroup .alignL {width: 100%; display: flex; justify-content: flex-start;}
+.comBtnGroup .alignC {width: 100%; display: flex; justify-content: center;}
+.comBtnGroup .alignR {width: 100%; display: flex; justify-content: flex-end;}
+.comBtnGroup .btnBox .btn {min-width: 100px; padding: 0 10px; height: 34px; margin-left: 5px; font-size: 14px; font-weight: 400; white-space: nowrap; border-radius: 4px;}
+.comBtnGroup .btnBox .btn:first-child {margin-left:0;}
+.comBtnGroup .btnBox .btn.red {color: #fff; background: #b01f1f; border:1px solid #b01f1f;}
+.comBtnGroup .btnBox .btn.blue {color: #fff; background: #5a7eff; border:1px solid #5a7eff;}
+.comBtnGroup .btnBox .btn.dkBlue {color: #fff; background: #2a2d3e; border:1px solid #2a2d3e;}
+.comBtnGroup .btnBox .btn.purple {color: #fff; background: #263688; border:1px solid #263688;}
+.comBtnGroup .btnBox .btn.gLine {color:#757575; background:#fff; border:1px solid #9fa0a0;}
+.comBtnGroup .btnBox .btn.blLine {color:#2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.comBtnGroup .btnBox .btn.dkbLine {color: #2a2d3e; background:#fff; border:1px solid #2a2d3e;}
+.comBtnGroup .btnBox .btn.bLine {color: #5a7eff; background:#fff; border:1px solid #5a7eff;}
+</style>
+<!-- 그리드/테이블 하단 버튼 양측 -->  
+<div class="comBtnGroup">
+    <div class="alignL">
+        <div class="btnBox">
+            <button class="btn red">미리보기</button>
+            <button class="btn blue">서명하기</button>
+            <button class="btn dkBlue">취소</button>
+        </div>
+    </div>
+    <div class="alignC">
+        <div class="btnBox">
+            <button class="btn purple">저장</button>
+            <button class="btn gLine">승인하기</button>
+        </div>
+    </div>
+    <div class="alignR">
+        <div class="btnBox">
+            <button class="btn blLine">미리보기</button>
+            <button class="btn dkbLine">취소</button>
+            <button class="btn bLine">저장</button>
+        </div>
+    </div>
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">모바일 Class 규칙</div>
+<div class="guideCont">
+<div class="gText">
+    반응형에서의 정렬은 align class 태그에서 class를 변형 및 추가하며, 부모나 자식태그를 가급적 사용하지 않습니다.
+    <br>*샘플 1: (첫번째 버튼라인 : 정렬만 변경)
+    <br>*샘플 2: (두번째 버튼라인 : 버튼1개당 100%로 변형)
+    <br>*샘플 3: (세번째 버튼라인 : 모든 버튼이 1라인에 꽉차게 변형)
+    <br> - class btnBox 태그라인에 여러가지 변형 class 형태를 부여해 더 다양하게 만들 수 있습니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<style>
+@media screen and (max-width:767px) {
+    .comBtnGroup {flex-wrap: wrap;}
+    .comBtnGroup .btnBox {margin-top:5px;}
+    .comBtnGroup .moL {justify-content: flex-start;}
+    .comBtnGroup .moC {justify-content: center;}
+    .comBtnGroup .moR {justify-content: flex-end;}
+    .comBtnGroup .btnBox.mo100 {width:100%;}
+    .comBtnGroup .btnBox.mo100 .btn {width:100%; margin:5px 0 0 0;}
+    .comBtnGroup .btnBox.mo100 .btn:first-child {width:100%; margin:0;}
+    .comBtnGroup .btnBox.moLine1 {width:100%; display:flex;}
+    .comBtnGroup .btnBox.moLine1 .btn {width:100%;}
+
+}
+</style>
+<!-- 최하단 CURD 버튼 -->  
+<div class="comBtnGroup">
+    <div class="alignL moR">
+        <div class="btnBox">
+            <button class="btn red">미리보기</button>
+            <button class="btn blue">서명하기</button>
+            <button class="btn dkBlue">취소</button>
+        </div>
+    </div>
+    <div class="alignC moL">
+        <div class="btnBox mo100">
+            <button class="btn purple">저장</button>
+            <button class="btn gLine">승인하기</button>
+        </div>
+    </div>
+    <div class="alignR moC">
+        <div class="btnBox moLine1">
+            <button class="btn blLine">미리보기</button>
+            <button class="btn dkbLine">취소</button>
+            <button class="btn bLine">저장</button>
+        </div>
+    </div>
+</div>
+        
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        
